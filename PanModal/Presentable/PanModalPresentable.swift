@@ -172,7 +172,28 @@ public protocol PanModalPresentable: AnyObject {
      Default value is true.
      */
     var showDragIndicator: Bool { get }
-
+    
+    /**
+     Configurable value for setting the Y offset for the visible drag indicator. Ignored if drag indicator is hidden.
+     
+     Default value is 8.0
+     */
+    var dragIndicatorYOffset: CGFloat { get }
+    
+    /**
+     Configurable value for setting snap movement sensitivity.
+     
+     Default value is 0.7
+     */
+    var snapMovementSensitivity: CGFloat { get }
+    
+    /**
+     Configurable value for the drag indicator size.
+     
+     Default value is 36.0 x 5.0
+     */
+    var dragIndicatorSize: CGSize { get }
+    
     /**
      Asks the delegate if the pan modal should respond to the pan modal gesture recognizer.
      

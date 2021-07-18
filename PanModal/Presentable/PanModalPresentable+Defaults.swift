@@ -96,6 +96,18 @@ public extension PanModalPresentable where Self: UIViewController {
     var showDragIndicator: Bool {
         return shouldRoundTopCorners
     }
+    
+    var dragIndicatorYOffset: CGFloat {
+        return CGFloat(8.0)
+    }
+    
+    var snapMovementSensitivity: CGFloat {
+        return CGFloat(0.7)
+    }
+    
+    var dragIndicatorSize: CGSize {
+        return CGSize(width: 36.0, height: 5.0)
+    }
 
     func shouldRespond(to panModalGestureRecognizer: UIPanGestureRecognizer) -> Bool {
         return true
