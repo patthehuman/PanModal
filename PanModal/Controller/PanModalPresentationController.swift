@@ -406,7 +406,7 @@ private extension PanModalPresentationController {
     func addDragIndicatorView(to view: UIView) {
         view.addSubview(dragIndicatorView)
         dragIndicatorView.translatesAutoresizingMaskIntoConstraints = false
-        dragIndicatorView.bottomAnchor.constraint(equalTo: view.topAnchor, constant: -(presentable?.indicatorYOffset ?? 0.0)).isActive = true
+        dragIndicatorView.bottomAnchor.constraint(equalTo: view.topAnchor, constant: -(presentable?.dragIndicatorYOffset ?? 0.0)).isActive = true
         dragIndicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         dragIndicatorView.widthAnchor.constraint(equalToConstant: presentable?.dragIndicatorSize.width ?? 0.0).isActive = true
         dragIndicatorView.heightAnchor.constraint(equalToConstant: presentable?.dragIndicatorSize.height ?? 0.0).isActive = true
@@ -843,7 +843,7 @@ private extension PanModalPresentationController {
                                 cornerRadii: CGSize(width: radius, height: radius))
 
         // Draw around the drag indicator view, if its displayed and is above the view.
-        if presentable?.showDragIndicator == true && (presentable?.indicatorYOffset ?? 0.0 > 0) {
+        if presentable?.showDragIndicator == true && (presentable?.dragIndicatorYOffset ?? 0.0 > 0) {
             let indicatorLeftEdgeXPos = view.bounds.width/2.0 - (presentable?.dragIndicatorSize.width ?? 0.0)/2.0
             drawAroundDragIndicator(currentPath: path, indicatorLeftEdgeXPos: indicatorLeftEdgeXPos)
         }
@@ -863,7 +863,7 @@ private extension PanModalPresentationController {
      */
     func drawAroundDragIndicator(currentPath path: UIBezierPath, indicatorLeftEdgeXPos: CGFloat) {
 
-        let totalIndicatorOffset = (presentable?.indicatorYOffset ?? 0.0) + (presentable?.dragIndicatorSize.height ?? 0.0)
+        let totalIndicatorOffset = (presentable?.dragIndicatorYOffset ?? 0.0) + (presentable?.dragIndicatorSize.height ?? 0.0)
 
         // Draw around drag indicator starting from the left
         path.addLine(to: CGPoint(x: indicatorLeftEdgeXPos, y: path.currentPoint.y))

@@ -27,11 +27,11 @@ extension BasicViewController: PanModalPresentable {
     }
 
     var dragIndicatorYOffset: CGFloat {
-        return -10.0
+        return -6.0
     }
     
     var dragIndicatorSize: CGSize {
-        return CGSize(width: 100, height: 2)
+        return CGSize(width: 44, height: 2)
     }
     
     var longFormHeight: PanModalHeight {
