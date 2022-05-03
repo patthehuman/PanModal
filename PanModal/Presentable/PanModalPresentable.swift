@@ -134,6 +134,15 @@ public protocol PanModalPresentable: AnyObject {
      Default value is true.
      */
     var allowsDragToDismiss: Bool { get }
+    
+    /**
+     A flag to determine if the UIViewController should always be presented as Pan Modal.
+     
+     - Note: Return true to always be a Pan Modal
+     
+     Default is false. Which means that on iPad, it will be presented as a popover & as Pan Modal on iPhone.
+     */
+    var forcePanModal: Bool { get }
 
     /**
      A flag to determine if dismissal should be initiated when tapping on the dimmed background view.
